@@ -1,0 +1,338 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orefile General Dealer</title>
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <style>
+     /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baskerville SC', serif;
+}
+
+/* Header Navigation */
+.top-bar {
+  background-color: #003300; /* Green background */
+  padding: 15px 20px; /* Add padding */
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensures the header stays on top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .title-area h1 a {
+  color: #fff; /* White text for the brand name */
+  text-decoration: none; /* No underline */
+  font-size: 2em; /* Large font size */
+  font-weight: bold; /* Bold font */
+}
+
+.toggle-topbar.menu-icon {
+  display: none; /* Initially hidden for desktop */
+}
+
+.top-bar-section ul {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Flex for horizontal layout */
+  gap: 20px; /* Space between menu items */
+}
+
+.top-bar-section ul li a {
+  color: #fff; /* White text */
+  text-decoration: none; /* No underline */
+  padding: 10px 20px; /* Padding inside links */
+  transition: background-color 0.3s; /* Smooth hover transition */
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.top-bar-section ul li a:hover,
+.top-bar-section ul li.active a {
+  background-color: #9a1e1e; /* Darker green on hover or active link */
+}
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+  .top-bar .top-bar-section {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .top-bar .toggle-topbar {
+    display: block; /* Show the hamburger menu icon */
+  }
+
+  .top-bar .toggle-topbar.menu-icon a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+  }
+
+  .top-bar .toggle-topbar.menu-icon a span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+
+  .top-bar .toggle-topbar.menu-icon a span::before,
+  .top-bar .toggle-topbar.menu-icon a span::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+
+  .top-bar .toggle-topbar.menu-icon a span::before {
+    top: -8px;
+  }
+
+  .top-bar .toggle-topbar.menu-icon a span::after {
+    top: 8px;
+  }
+
+  .top-bar .show-menu {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  .top-bar .show-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .top-bar .show-menu ul li {
+    border-bottom: 1px solid #444;
+    margin: 0;
+  }
+
+  .top-bar .show-menu ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .top-bar .show-menu ul li a:hover {
+    background: #444;
+  }
+}
+/* Hero Text Container */
+.hero-text-container {
+    text-align: center;
+    color: #000; /* Adjust color if needed */
+    margin-top: 120px; /* Position text from the top of the page */
+    width: 100%;
+}
+
+/* Hero Heading */
+.hero-text-container h1 {
+    font-size: 2.5em; /* Adjust size as needed */
+    margin-bottom: 10px;
+}
+
+/* Slogan Text */
+.hero-text-container .slogan {
+    font-size: 1.2em; /* Adjust size as needed */
+    margin-top: 0;
+}
+
+/* Image Container */
+.image-container {
+    text-align: center; /* Center align the image within the container */
+    width: 80%; /* Set container width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to keep image within bounds */
+    margin: 20px auto; /* Center the container horizontally and add top and bottom margin */
+    position: relative; /* Establish a positioning context for the image */
+}
+
+/* Image Styling */
+.image-container img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container without stretching */
+    display: block; /* Remove extra space below the image */
+}
+
+
+/* Step-by-Step Guide Styling */
+#step-by-step-guide {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 90%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#step-by-step-guide h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #003300; /* Green color */
+}
+
+#step-by-step-guide .guide-steps {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Step-by-Step Guide Container */
+#step-by-step-guide {
+    text-align: center; /* Center align text inside the container */
+    padding: 20px; /* Optional padding for spacing */
+}
+
+/* Guide Steps List Items */
+#step-by-step-guide .guide-steps {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Guide Steps List Item */
+#step-by-step-guide .guide-steps li {
+    margin-bottom: 20px; /* Adjust spacing between steps */
+}
+
+/* Guide Step Heading */
+#step-by-step-guide .guide-steps h4 {
+    font-size: 18px;
+    color: #003300; /* Green color */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Guide Step Paragraph */
+#step-by-step-guide .guide-steps p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0; /* Remove default margin */
+}
+
+
+  /* Footer */
+footer {
+  background-color: #003300;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+</style>
+  <body>
+
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="index.php">Orefile General Dealer</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+      <!-- Right Nav Section -->
+        <ul class="right">
+        <li class="active"><a href="index.php">Home</a></li>
+          <li><a href="about.php">About</a></li>
+          <li><a href="products.php">Products</a></li>
+          <li><a href="cart.php">View Cart</a></li>
+          <li><a href="orders.php">My Orders</a></li>
+          <li><a href="contact.php">Contact</a></li>
+          <?php
+
+          if(isset($_SESSION['username'])){
+            echo '<li><a href="account.php">My Account</a></li>';
+            echo '<li><a href="logout.php">Log Out</a></li>';
+          }
+          else{
+            echo '<li><a href="login.php">Log In</a></li>';
+            echo '<li><a href="register.php">Register</a></li>';
+          }
+          ?>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="hero-text-container">
+    <h1>Welcome to Orefile General Dealer</h1>
+    <p class="slogan">Your one-stop shop for all your grocery needs</p>
+</div>
+
+<div class="image-container">
+    <img src="images/image1.jpg" alt="Step-by-Step Guide">
+</div>
+
+
+    <div class="row" style="margin-top:10px;">
+      <div class="small-12">
+
+      <section id="step-by-step-guide">
+        <div class="guide-container">
+            <h2>Kaedi ya Kgato ka Kgato</h2>
+            <ol class="guide-steps">
+                <li>
+                    <h4>Kgato 1: Ikwadise</h4>
+                    <p>Dira akhaonto ka go tobetsa konopo ya "Sign Up" kwa sekhutlong se se kwa godimo se se kafa mojeng mme o tlatse dintlha tsa gago.</p>
+                </li>
+                <li>
+                    <h4>Kgato 2: Batlisisa Dikuno</h4>
+                    <p>Leba dilo tse di farologaneng tse re di rekang ka go ya kwa karolong ya "Shop". Dirisa lenaane la go senka go batla dilo tse di rileng.</p>
+                </li>
+                <li>
+                    <h4>Kgato 3: Tsenya mo Kgorong</h4>
+                    <p>Tlhopha dilo tse o di batlang mme o di tsenye mo koloing ya gago. Sekaseka dilo tse o di tlhophileng mo kareng ya gago pele ga o ya go duela.</p>
+                </li>
+                <li>
+                    <h4>Kgato 4: Go Tsena</h4>
+                    <p>Tswelela pele go ya go duela, koo o ka tsenyang aterese ya legae la gago gone mme o tlhophe mokgwa wa go duela. Tlhomamisa gore o batla go fetsa go reka.</p>
+                </li>
+                <li>
+                    <h4>Kgato 5: Amogela Tlhomamiso</h4>
+                    <p>O tla amogela imeile e e go tlhomamisetsang gore o rekile, e e nang le dintlha tsa gore o rekile eng le nako e e lekanyeditsweng ya gore o tla e newa leng.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Mafikeng Digital Innovation Hub. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+      </div>
+    </div>
+
+  </body>
+</html>
